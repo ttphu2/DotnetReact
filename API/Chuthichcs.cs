@@ -1,4 +1,6 @@
-﻿// DbContext chịu trách nhiệm mở kết nối, quản lý kết nối đến cơ sở dữ liệu
+﻿//.NET là gì ? là một hệ sinh thái hay một nền tảng thống nhất hỗ trợ xây dựng các loại ứng dụng mà chúng ta muốn xây dựng
+// API là gì ? loại mã mà chúng ta đang viết đó cũng có thể áp dụng trong rất nhiều loại ứng dụng khác vd API rất cơ bản trả về danh sách các sản phẩm của chúng tôi.
+// DbContext chịu trách nhiệm mở kết nối, quản lý kết nối đến cơ sở dữ liệu
 // DbContext sẽ có 1 hoặc nhiều DbSet, và những DbSet này đại diện cho những tables trong csdl
 //LINQ là một công cụ giúp chúng ta truy vấn database
 //Ví dụ var products = context.Products.ToList();
@@ -17,3 +19,4 @@
 // Migrations = cho phép EF xem mã của chúng tôi và tạo một bộ lệnh để tạo cơ sở dữ liệu và các bảng dựa trên code mà chúng ta đã tạo.
 //Giải thích về async và await trong API
 //chúng ta sử dụng await từ khóa ở đây. Nếu cơ sở dữ liệu của chúng tôi yêu cầu một thời gian để xử lý kết quả và trả lại kết quả, thì await từ khóa sẽ tạm dừng việc GetProducts thực thi phương thức và trả về một tác vụ chưa hoàn thành. Trong thời gian đó, thread sẽ được đưa trở lại thread pool chỉ để sẵn sàng cho một yêu cầu khác. Sau khi hoạt động cơ sở dữ liệu hoàn tất, phương thức không đồng bộ sẽ tiếp tục thực thi và sẽ trả về danh sách các công ty.
+//Chúng tôi không có SynchronizationContext trong các ứng dụng ASP.NET Core. ASP.NET Core tránh nắm bắt và xếp hàng đợi ngữ cảnh, tất cả những gì nó làm là lấy luồng từ nhóm luồng và gán nó cho request Vì vậy, ứng dụng sẽ ít hoạt động nền hơn. 
